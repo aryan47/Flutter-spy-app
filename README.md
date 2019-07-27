@@ -1,8 +1,9 @@
 # spy_app
 
-A new Flutter project.
+This project has been created in flutter. This project helps to spy on your friends location anytime
 
 ## Getting Started
+This is still in progress.............
 
 This project is a starting point for a Flutter application.
 
