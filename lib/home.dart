@@ -39,7 +39,8 @@ class _Home extends State<Home> {
                   leading: Icon(Icons.verified_user),
                   title: Text(
                     "Welcome Ritesh",
-                    style: TextStyle(color: Constant.WHITE_COLOR, fontSize: 20.0),
+                    style:
+                        TextStyle(color: Constant.WHITE_COLOR, fontSize: 20.0),
                   )),
               decoration: BoxDecoration(color: Constant.GREEN_COLOR),
             ),
@@ -106,48 +107,51 @@ class _Home extends State<Home> {
         child: Container(
           height: 250.0,
           width: MediaQuery.of(context).size.width,
-          child: ListView(
+          child: ListView.builder(
             padding: EdgeInsets.all(5.0),
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              _getBottomCard(),
-              _getBottomCard(),
-              _getBottomCard(),
-            ],
+            itemCount: [1, 2, 3, 4].length,
+            itemBuilder: (build, index) {
+              return _getBottomCard();
+            },
           ),
-        )
-        // ListView.builder(
-        //   scrollDirection: Axis.horizontal,
-        //   itemCount: [1,2,3].length,
-        //   itemBuilder: (build, index){
-        //     return ListTile(
-        //       leading: Text('Hello'),
-        //     );
-        //   },
-        // ),
-        );
+        ));
   }
 
   Widget _getAppBar() {
     return Positioned(
-      top: 45.0,
-      right: 10.0,
-      child: InkWell(
-        child: Card(
-          color: Constant.GREEN_COLOR,
+        top: 45.0,
+        right: 10.0,
+        child: ButtonTheme(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          child: Container(
-              alignment: Alignment.center,
-              height: 30.0,
-              width: 150.0,
-              child: Text(
-                "Chat with assistant",
-                style: TextStyle(color: Constant.WHITE_COLOR),
-              )),
-        ),
-      ),
-    );
+          minWidth: 150.0,
+          height: 33.0,
+          child: RaisedButton(
+            color: Constant.GREEN_COLOR,
+            child: Text(
+              'Chat With Assistant',
+              style: TextStyle(color: Constant.WHITE_COLOR,fontSize: Constant.FONT_SMALL),
+            ),
+            onPressed: () => Navigator.pushNamed(context, Details.id),
+          ),
+        )
+        //  InkWell(
+        //   child: Card(
+        //     color: Constant.GREEN_COLOR,
+        //     shape:
+        //         RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        //     child: Container(
+        //         alignment: Alignment.center,
+        //         height: 30.0,
+        //         width: 150.0,
+        //         child: Text(
+        //           "Chat with assistant",
+        //           style: TextStyle(color: Constant.WHITE_COLOR),
+        //         )),
+        //   ),
+        // ),
+        );
   }
 
   Widget _getBottomCard() {
@@ -155,7 +159,8 @@ class _Home extends State<Home> {
       child: Container(
         width: 300.0,
         child: Card(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           elevation: 3.0,
           child: Padding(
             padding: EdgeInsets.all(20.0),
@@ -166,7 +171,10 @@ class _Home extends State<Home> {
                   title: Text('Ritesh Kant'),
                 ),
                 ListTile(
-                  leading: Icon(Icons.location_on,color: Constant.GREEN_COLOR,),
+                  leading: Icon(
+                    Icons.location_on,
+                    color: Constant.GREEN_COLOR,
+                  ),
                   title: Text(
                       '2nd Avenue, Teachers Colony, 6th Main, Koramangala, Bangalore'),
                 ),
@@ -176,7 +184,10 @@ class _Home extends State<Home> {
                   minWidth: 200.0,
                   child: RaisedButton(
                     color: Constant.GREEN_COLOR,
-                    child: Text('See Details',style: TextStyle(color: Constant.WHITE_COLOR),),
+                    child: Text(
+                      'See Details',
+                      style: TextStyle(color: Constant.WHITE_COLOR),
+                    ),
                     onPressed: () => Navigator.pushNamed(context, Details.id),
                   ),
                 )
