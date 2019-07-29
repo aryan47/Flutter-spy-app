@@ -31,31 +31,7 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: ListTile(
-                  leading: Icon(Icons.verified_user),
-                  title: Text(
-                    "Welcome Ritesh",
-                    style:
-                        TextStyle(color: Constant.WHITE_COLOR, fontSize: 20.0),
-                  )),
-              decoration: BoxDecoration(color: Constant.GREEN_COLOR),
-            ),
-            ListTile(
-              leading: Icon(Icons.assistant),
-              title: Text("Ask Assistant"),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("Setting"),
-              onTap: () => Navigator.pushNamed(context, Settings.id),
-            )
-          ],
-        ),
-      ),
+      drawer: _getDrawerContent(),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -67,6 +43,33 @@ class _Home extends State<Home> {
             _getHorizontalList(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _getDrawerContent() {
+    return Drawer(
+      child: ListView(
+        children: <Widget>[
+          DrawerHeader(
+            child: ListTile(
+                leading: Icon(Icons.verified_user),
+                title: Text(
+                  "Welcome Ritesh",
+                  style: TextStyle(color: Constant.WHITE_COLOR, fontSize: 20.0),
+                )),
+            decoration: BoxDecoration(color: Constant.GREEN_COLOR),
+          ),
+          ListTile(
+            leading: Icon(Icons.assistant),
+            title: Text("Ask Assistant"),
+          ),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text("Setting"),
+            onTap: () => Navigator.pushNamed(context, Settings.id),
+          )
+        ],
       ),
     );
   }
@@ -131,27 +134,12 @@ class _Home extends State<Home> {
             color: Constant.GREEN_COLOR,
             child: Text(
               'Chat With Assistant',
-              style: TextStyle(color: Constant.WHITE_COLOR,fontSize: Constant.FONT_SMALL),
+              style: TextStyle(
+                  color: Constant.WHITE_COLOR, fontSize: Constant.FONT_SMALL),
             ),
             onPressed: () => Navigator.pushNamed(context, Details.id),
           ),
-        )
-        //  InkWell(
-        //   child: Card(
-        //     color: Constant.GREEN_COLOR,
-        //     shape:
-        //         RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-        //     child: Container(
-        //         alignment: Alignment.center,
-        //         height: 30.0,
-        //         width: 150.0,
-        //         child: Text(
-        //           "Chat with assistant",
-        //           style: TextStyle(color: Constant.WHITE_COLOR),
-        //         )),
-        //   ),
-        // ),
-        );
+        ));
   }
 
   Widget _getBottomCard() {
