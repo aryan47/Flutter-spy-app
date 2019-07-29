@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "857183228847",
+    "firebase_url": "https://spyapp-248016.firebaseio.com",
+    "project_id": "spyapp-248016",
+    "storage_bucket": "spyapp-248016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857183228847:android:a6d773a8ac7ede12",
+        "android_client_info": {
+          "package_name": "com.example.spy_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857183228847-b88hqnqecnod1v56ungs35u9ucbmfet2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxLgCyOKXOizEMkzr1AtsfUymW2tzpSjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857183228847-b88hqnqecnod1v56ungs35u9ucbmfet2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

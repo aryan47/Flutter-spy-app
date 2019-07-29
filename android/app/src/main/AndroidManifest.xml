@@ -12,7 +12,7 @@
         android:label="spy_app"
         android:icon="@mipmap/ic_launcher">
         <!-- google map key (dont copy key) -->
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value=""/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBVemFVxU0J_P50cugWJF1tb_rdkLnHTuM"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

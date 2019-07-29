@@ -1,5 +1,5 @@
 name: spy_app
-description: A new Flutter project.
+description: This project is under progress.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -24,10 +24,13 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   google_maps_flutter: 
+  firebase_ml_vision: 
+  # firebase_core: ^0.4.0+8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 
 # For information on the generic Dart part of this file, see the

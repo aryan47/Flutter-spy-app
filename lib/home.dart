@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:spy_app/constants.dart';
+import 'package:spy_app/details.dart';
+import 'package:spy_app/setting_view.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -33,16 +36,21 @@ class _Home extends State<Home> {
           children: <Widget>[
             DrawerHeader(
               child: ListTile(
-                leading: Icon(Icons.verified_user),
+                  leading: Icon(Icons.verified_user),
                   title: Text(
-                "Welcome Ritesh",
-                style: TextStyle(color: Colors.white, fontSize: 20.0),
-              )),
-              decoration: BoxDecoration(color: Colors.green),
+                    "Welcome Ritesh",
+                    style: TextStyle(color: Constant.WHITE_COLOR, fontSize: 20.0),
+                  )),
+              decoration: BoxDecoration(color: Constant.GREEN_COLOR),
             ),
             ListTile(
               leading: Icon(Icons.assistant),
               title: Text("Ask Assistant"),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Setting"),
+              onTap: () => Navigator.pushNamed(context, Settings.id),
             )
           ],
         ),
@@ -77,10 +85,10 @@ class _Home extends State<Home> {
   Widget _getDrawer() {
     return Builder(builder: (context) {
       return Positioned(
-        top: 30.0,
+        top: 35.0,
         left: 30.0,
         child: IconButton(
-          color: Colors.green,
+          color: Constant.GREEN_COLOR,
           iconSize: 30.0,
           icon: Icon(Icons.menu),
           onPressed: () {
@@ -96,7 +104,7 @@ class _Home extends State<Home> {
         bottom: 0.0,
         left: 2.0,
         child: Container(
-          height: 150.0,
+          height: 250.0,
           width: MediaQuery.of(context).size.width,
           child: ListView(
             padding: EdgeInsets.all(5.0),
@@ -122,20 +130,20 @@ class _Home extends State<Home> {
 
   Widget _getAppBar() {
     return Positioned(
-      top: 50.0,
+      top: 45.0,
       right: 10.0,
       child: InkWell(
         child: Card(
-          color: Colors.green,
+          color: Constant.GREEN_COLOR,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           child: Container(
               alignment: Alignment.center,
-              height: 26.0,
+              height: 30.0,
               width: 150.0,
               child: Text(
                 "Chat with assistant",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Constant.WHITE_COLOR),
               )),
         ),
       ),
@@ -144,34 +152,34 @@ class _Home extends State<Home> {
 
   Widget _getBottomCard() {
     return InkWell(
-      splashColor: Colors.green,
       child: Container(
-        color: Colors.green[1500],
-        width: 250.0,
+        width: 300.0,
         child: Card(
-          color: Colors.greenAccent[100],
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          elevation: 3.0,
           child: Padding(
-            padding: EdgeInsets.all(5.0),
+            padding: EdgeInsets.all(20.0),
             child: Column(
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    CircleAvatar(
-                      backgroundColor: Colors.green,
-                    ),
-                    SizedBox(
-                      width: 5.0,
-                    ),
-                    Text(
-                      "Ritesh Kant",
-                      style: TextStyle(
-                          color: Colors.deepPurple,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ],
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text('Ritesh Kant'),
                 ),
-                Divider(),
-                Text("Last Address:")
+                ListTile(
+                  leading: Icon(Icons.location_on,color: Constant.GREEN_COLOR,),
+                  title: Text(
+                      '2nd Avenue, Teachers Colony, 6th Main, Koramangala, Bangalore'),
+                ),
+                ButtonTheme(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  minWidth: 200.0,
+                  child: RaisedButton(
+                    color: Constant.GREEN_COLOR,
+                    child: Text('See Details',style: TextStyle(color: Constant.WHITE_COLOR),),
+                    onPressed: () => Navigator.pushNamed(context, Details.id),
+                  ),
+                )
               ],
             ),
           ),
