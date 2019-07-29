@@ -3,7 +3,7 @@
 This project has been created in flutter. This project helps to spy on your friends location anytime
 
 ## Getting Started
-This is still in progress.............
+This Project is in progress.............
 
 This project is a starting point for a Flutter application.
 
