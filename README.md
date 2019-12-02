@@ -1,6 +1,6 @@
-# spy_app
+# Flutter Spy app
 
-This project has been created in flutter. This project helps to spy on your friends location anytime
+This project is still in development. This project helps to track user activity.
 
 ## Getting Started
 This Project is in progress.............
